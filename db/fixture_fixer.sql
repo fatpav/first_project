@@ -1,6 +1,6 @@
 DROP TABLE teams;
-DROP TABLE users
-DROP TABLE fixtures
+DROP TABLE users;
+DROP TABLE fixtures;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
