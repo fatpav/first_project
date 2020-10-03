@@ -1,7 +1,10 @@
 class Fixture:
 
-    def __init__(self, fixture_id):
+    def __init__(self, team1_name, team2_name, fixture_id = None):
+        self.team1_name = team1_name
+        self.team2_name = team2_name
         self.fixture_id = fixture_id
-
-    def add_fixture(self, team_1, team_2, score_1, score_2):
-        
+    
+    def create_fixture(self, team1, team2):
+        return 
+    
