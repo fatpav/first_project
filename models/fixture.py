@@ -5,6 +5,5 @@ class Fixture:
         self.team2_name = team2_name
         self.fixture_id = fixture_id
     
-    def create_fixture(self, team1, team2):
-        return 
+    
     
