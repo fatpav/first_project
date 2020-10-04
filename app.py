@@ -4,6 +4,8 @@ from templates.fixtures import *
 
 app = Flask(__name__)
 
+app.register_blueprint(users_blueprint)
+
 @app.route('/')
 def home():
     return render_template('index.html')

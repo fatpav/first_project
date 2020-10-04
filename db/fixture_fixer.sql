@@ -14,7 +14,7 @@ CREATE TABLE teams (
 
 CREATE TABLE fixtures (
     fixture_id SERIAL PRIMARY KEY,
-    hometeam INT,
-    awayteam INT
+    homescore INT,
+    awayscore INT
 
 );
