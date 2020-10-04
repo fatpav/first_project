@@ -11,10 +11,10 @@ class Fixture:
     # The User will input the score of each fixture and store the list for later editing/completion
     #  
     
-    def create_fixture(self, team1_name, team2_name):
+    def create_fixture(self, team1, team2):
         fixtures = []
+        
         for fixture in fixtures:
-            fixture.append(team1_name, team2_name)
-        return str(team2_name +'vs'+ team2_name)
-
+            fixture.append(team)
+        return fixtures + team1 + " vs " + team2 +
 
