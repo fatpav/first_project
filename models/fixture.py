@@ -1,6 +1,6 @@
 class Fixture:
 
-    def __init__(self, team1_name, team2_name, score_home, score_away, fixture_id = None):
+    def __init__(self, fixture_id = None):
         self.team1_name = team1_name
         self.team2_name = team2_name
         self.score_home = score_home
@@ -11,4 +11,10 @@ class Fixture:
     # The User will input the score of each fixture and store the list for later editing/completion
     #  
     
-    
+    def create_fixture(self, team1_name, team2_name):
+        fixtures = []
+        for fixture in fixtures:
+            fixture.append(team1_name, team2_name)
+        return str(team2_name +'vs'+ team2_name)
+
+
