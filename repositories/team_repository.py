@@ -1,4 +1,4 @@
-rom db.run_sql import run_sql
+from db.run_sql import run_sql
 
 from models.user import User
 from models.team import Team
@@ -34,3 +34,9 @@ def select(id):
     if result is not None:
         team = Team(result['team_name'], result['id'])
         return team
+
+def create_team_list(self, team_list):
+    self.team_list = []
+    team = Team(team_name, team_id)
+    team_list.append(team)
+    return team_list
