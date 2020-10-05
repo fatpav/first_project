@@ -15,7 +15,7 @@ def new_team():
     return render_template('/teams/new.html')
 
 @team_blueprint.route('/teams', methods=['POST'])
-def create_team():
+def create_team_list():
 
     team_list = request.form.keys()
 
@@ -26,12 +26,15 @@ def create_team():
     
     # import pdb; pdb.set_trace()
     
-    return redirect('/teams')
+    return redirect('/teams/index.html')
+
+
+@team_blueprint.route('/teams/index')
 
 @team_blueprint.route('/teams/<id>/delete', methods=['POST'])
 def delete_team(id):
     team_repository.delete(id)
-    return redirect('/teams')
+    return redirect('/teams/index.html')
 
 
 
