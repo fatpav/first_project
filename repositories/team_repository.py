@@ -13,13 +13,13 @@ def save(team):
 def select_all():
     teams = []
      
-     sql "SELECT * FROM teams"
-     results = run_sql(sql)
+    sql =  "SELECT * FROM teams"
+    results = run_sql(sql)
 
-     for row in results:
-         team = Team(row['team_name'], row['id'])
-         teams.append(team)
-         return teams
+    for row in results:
+        team = Team(row['team_name'], row['id'])
+        teams.append(team)
+        return teams
 
 def delete_all():
     sql = "DELETE FROM teams"
