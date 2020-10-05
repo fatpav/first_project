@@ -7,8 +7,8 @@ def save(user):
     sql = "INSERT INTO users (name) VALUES (%s) RETURNING id"
     values = [user.name]
     results = run_sql(sql, values)
-    user.id = results[0]['id']
-    return user
+    id = results[0]['id']
+    user.id = id
 
 def select_all():
     users = []
