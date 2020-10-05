@@ -26,8 +26,21 @@ def create_user():
     user_repository.save(new_user)
     return redirect('/users')
 
+@user_blueprint.route('/users/<id>', methods=['POST'])
+def update_user(id):
+    name = request.form["name"]
+    user = User(name, id)
+    user_repository.update(user)
+    return redirect('/users')
+
 @user_blueprint.route('/users/<id>/delete', methods=['POST'])
 def delete_user(id):
     user_repository.delete(id)
     return redirect('/users')
+
+@user_blueprint.route("/users/<id>/edit", methods=['POST'])
+def edit_user(id):
+    user = user_repository.select(id)
+    return render_template('users/edit.html', user=user)
+
 

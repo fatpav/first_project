@@ -37,6 +37,6 @@ def select(id):
 
 def create_team_list(self, team_list):
     self.team_list = []
-    team = Team(team_name, team_id)
+    team = Team(team_name)
     team_list.append(team)
     return team_list

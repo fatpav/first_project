@@ -1,0 +1,23 @@
+{ % extends 'base.html' %}
+
+{% block content %}
+
+<h2>Enter your team names</h2>
+
+<form action="/teams" method='POST'>
+    <div>
+        <label for="name">Team 1</label>
+        <input type="text" id="team1">
+    </div>
+    <div>
+        <label for="name">Team 1</label>
+        <input type="text" id="team1">
+    </div>
+    <div>
+        <label for="name">Team 1</label>
+        <input type="text" id="team1">
+    </div>
+
+</form>
+
+{% endblock %}
