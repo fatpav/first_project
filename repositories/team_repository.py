@@ -1,13 +1,14 @@
 from db.run_sql import run_sql
 
-from models.user import User
+
 from models.team import Team
 
 def save(team):
-    sql= "INSERT INTO teams (name) VALUES (%s) RETURNING id"
-    values = [team.name]
+    sql= "INSERT INTO teams (team_name) VALUES (%s) RETURNING team_id"
+    values = [team.team_name]
+    # import pdb; pdb.set_trace()
     results = run_sql(sql, values)
-    team.team_id = results[0]['id']
+    team.team_id = results[0]['team_id']
     return team
 
 def select_all():
@@ -17,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        team = Team(row['team_name'], row['id'])
+        team = Team(row['team_name'], row['team_id'])
         teams.append(team)
         return teams
 
@@ -27,12 +28,12 @@ def delete_all():
 
 def select(id):
     team = None
-    sql = "SELECT * FROM teams WHERE id = %s"
+    sql = "SELECT * FROM teams WHERE team_id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['team_name'], result['id'])
+        team = Team(result['team_name'], result['team_id'])
         return team
 
 def create_team_list(self, team_list):
