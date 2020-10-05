@@ -14,6 +14,11 @@ def teams():
 def new_team():
     return render_template('/teams/new.html')
 
+
+@team_blueprint.route('/teams/index')
+def new_team_list():
+    return render_template('/teams/index.html')
+
 @team_blueprint.route('/teams', methods=['POST'])
 def create_team_list():
 
@@ -26,15 +31,21 @@ def create_team_list():
     
     # import pdb; pdb.set_trace()
     
-    return redirect('/teams/index.html')
-
+    return redirect('/teams/index')
 
 @team_blueprint.route('/teams/index')
+def list_teams():
+    teams = team_repository.select_all()
+    return render_template("teams/index.html", teams=teams)
 
-@team_blueprint.route('/teams/<id>/delete', methods=['POST'])
-def delete_team(id):
-    team_repository.delete(id)
-    return redirect('/teams/index.html')
+
+
+
+
+# @team_blueprint.route('/teams/<id>/delete', methods=['POST'])
+# def delete_team(id):
+#     team_repository.delete(id)
+#     return redirect('/teams/index.html')
 
 
 
