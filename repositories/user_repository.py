@@ -18,7 +18,7 @@ def select_all():
     for result in results:
         user = User(result['name'], result['id'])
         users.append(user)
-        return users
+    return users
 
 def select(id):
     user = None
