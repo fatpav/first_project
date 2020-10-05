@@ -4,7 +4,9 @@
 
 <h3>Welcome to FixtureFixer</h3>
 
-<a href="/new_user"><button type = "submit" action = '/new_user'>Get Started</button></a>
+<form action="users/new_user" method='POST'>
+    <button type = "submit" action = 'users/new_user'>Get Started</button>
+</form>
 
 <button type = "submit" action = '/current_users'>Current Users</button>
 {% endblock %}
