@@ -1,9 +1,10 @@
 from flask import Flask, render_template, redirect, request, Blueprint
 from templates import *
 from templates.fixtures import *
+from templates.teams import *
 
 from controllers.teams_controller import team_blueprint
-
+from controllers.fixtures_controller import fixtures_blueprint
 
 app = Flask(__name__)
 

@@ -1,21 +1,14 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block content %}
 
-<h2>Enter your team names</h2>
+<h2>Add a New Team</h2>
 
-<form action="/teams/new" method='POST'>
+<form action="/teams" method="POST">
     <div>
-        <label for="team1">Team 1</label>
-        <input type="text" id="team1" name="team1">
+        <label for="name"> Team Name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit">
     </div>
-    <div>
-        <label for="team2">Team 2</label>
-        <input type="text" id="team2" name="team2">
-    </div>
-    <input type="submit">
 </form>
-
-<a href="/teams">Check out your teams!</a>
 
 {% endblock %}

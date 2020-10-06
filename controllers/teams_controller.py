@@ -10,21 +10,12 @@ team_blueprint = Blueprint("teams", __name__)
 def new_team():
     return render_template('/teams/new.html')
 
-@team_blueprint.route('/teams/new', methods=['POST'])
-def create_team_list():
-
-    team_list = request.form.keys()
-
-    for key in team_list: 
-        team = request.form[key]
-        new_team = Team(team)
-        team_repository.save(new_team)
-               
-        
-    
-    # import pdb; pdb.set_trace()
-    
-    return redirect('/teams')
+@team_blueprint.route('/teams', methods=['POST'])
+def create_team():
+    name = request.form["name"]
+    new_team = Team(name)
+    team_repository.save(new_team)
+    return redirect("/teams")
 
 @team_blueprint.route('/teams')
 def teams():

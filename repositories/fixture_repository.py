@@ -10,6 +10,7 @@ def save(fixture):
     values = [fixture.team1.id, fixture.team2.id]
     results = run_sql(sql, values)
     id = results[0]['id']
+    fixture.id = id
 
 def select_all():
     fixtures = []
@@ -44,6 +45,6 @@ def update(fixture):
     sql = "UPDATE fixtures SET (team1_id, team2_id) = (%s, %s) WHERE id = %s"
     values = [fixture.team1.id, fixture.team2.id, fixture.id]
     run_sql(sql, values)
-    
+
 
 
