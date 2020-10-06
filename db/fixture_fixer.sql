@@ -13,8 +13,8 @@ CREATE TABLE teams (
 );
 
 CREATE TABLE fixtures (
-    fixture_id SERIAL PRIMARY KEY,
-    homescore INT,
-    awayscore INT
+    id SERIAL PRIMARY KEY,
+    team_id SERIAL REFERENCES teams(team_id),
+    user_id SERIAL REFERENCES users(id)
 
 );
