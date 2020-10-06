@@ -16,9 +16,15 @@ def create_team_list():
     team_list = request.form.keys()
 
     for key in team_list:
+        team_list = filter(None, team_list)
+        team_list = filter(bool, team_list)        
+        team_list = filter(len, team_list)        
+        team_list = filter(lambda item: item, team_list) 
         team = request.form[key]
         new_team = Team(team)
         team_repository.save(new_team)
+               
+        
     
     # import pdb; pdb.set_trace()
     
