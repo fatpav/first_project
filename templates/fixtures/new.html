@@ -1,11 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
 <h2>Add a New Fixture</h2>
 
 <form action="/fixtures" method="POST">
     <div>
         <label for="team1">Team 1:</label>
         <select name="team1_id" id="team1">
-            {% for team1 in teams %}
-            <option value="{{ team1.id }}">
+            {% for team in teams %}
+            <option value="{{ team.id }}">
                 {{ team1.name }}
             </option>
             {% endfor %}
@@ -15,7 +18,7 @@
         <label for="team2">Team 2:</label>
         <select name="team2_id" id="team2">
             {% for team2 in teams %}
-            <option value="{{ team2.id }}">
+            <option value="{{ team.id }}">
                 {{ team2.name }}
             </option>
             {% endfor %}
@@ -25,3 +28,5 @@
         <input type="submit">
     </div>
 </form>
+
+{% endblock %}

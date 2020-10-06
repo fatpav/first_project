@@ -15,8 +15,9 @@ def fixtures():
 
 @fixtures_blueprint.route("/fixtures/new")
 def new_fixture():
-    teams = team_repository.select_all()
-    return render_template("/fixtures/new.html", teams=teams)
+    team1 = team_repository.select_all()
+    team2 = team_repository.select_all()
+    return render_template("/fixtures/new.html", team1=team1, team2=team2)
 
 @fixtures_blueprint.route("/fixtures", methods=['POST'])
 def create_fixture():

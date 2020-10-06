@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Fixtures</h2>
+
+{% for fixture in fixtures %}
+
+<section>
+    <p>{{ fixture.team1.name }} VS. {{ fixture.team2.name }}</p>
+    <a href="/fixtures/{{ fixture.id }}/edit">Edit</a>
+    <form action="/fixtures/{{ fixture.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
+{% endfor %}
+{% endblock %}

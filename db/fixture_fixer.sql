@@ -10,7 +10,5 @@ CREATE TABLE teams (
 CREATE TABLE fixtures (
     fixture_id SERIAL PRIMARY KEY,
     team1_id SERIAL REFERENCES teams(id),
-    team2_id SERIAL REFERENCES teams(id),
-    score1 INT,
-    score2 INT
+    team2_id SERIAL REFERENCES teams(id)
 );

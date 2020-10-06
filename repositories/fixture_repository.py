@@ -6,7 +6,7 @@ import repositories.team_repository as team_repository
 
 
 def save(fixture):
-    sql = "INSERT INTO fixtures (team1.id, team2.id) VALUES (%s, %s) RETURNING id"
+    sql = "INSERT INTO fixtures (team1_id, team2_id) VALUES (%s, %s) RETURNING id"
     values = [fixture.team1.id, fixture.team2.id]
     results = run_sql(sql, values)
     id = results[0]['id']

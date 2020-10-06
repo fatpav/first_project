@@ -10,5 +10,3 @@ import repositories.team_repository as team_repository
 
 team_repository.delete_all()
 
-team1 = team("Hapsburg Saturday")
-team_repository.save(team1)
