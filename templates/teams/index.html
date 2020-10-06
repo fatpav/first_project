@@ -7,12 +7,12 @@
 {% for team in teams %}
 
 <section>
-    <p>{{ team.team_name }}</p>
-    <a href="/teams/{{ team.team_id }}/delete"></a>
-    <form action="/teams/{{ team.team_id }}/delete" method='POST'>
-        <input type = "submit" value = "Delete">
+    <p>{{ team.name }}</p>
+    <a href="/teams/{{ team.id }}/edit"></a>
+    <form action="/teams/{{ team.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
     </form>
-    <form action="/teams/{{team.team_id}}/edit" method='POST'>
+    <form action="/teams/{{ team.id }}/edit" method='POST'>
         <input type="submit" value ="Edit">
     </form>
 </section>

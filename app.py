@@ -1,13 +1,12 @@
 from flask import Flask, render_template, redirect, request, Blueprint
 from templates import *
 from templates.fixtures import *
-from controllers.users_controller import user_blueprint
+
 from controllers.teams_controller import team_blueprint
 
 
 app = Flask(__name__)
 
-app.register_blueprint(user_blueprint)
 app.register_blueprint(team_blueprint)
 # app.register_blueprint(fixtures_blueprint)
 

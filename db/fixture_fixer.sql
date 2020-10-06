@@ -1,20 +1,16 @@
-DROP TABLE teams;
-DROP TABLE users;
-DROP TABLE fixtures;
+DROP TABLE IF EXISTS fixtures;
+DROP TABLE IF EXISTS teams;
 
-CREATE TABLE users (
+
+CREATE TABLE teams (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
 );
 
-CREATE TABLE teams (
-    team_id SERIAL PRIMARY KEY,
-    team_name VARCHAR(255)
-);
-
 CREATE TABLE fixtures (
-    id SERIAL PRIMARY KEY,
-    team_id SERIAL REFERENCES teams(team_id),
-    user_id SERIAL REFERENCES users(id)
-
+    fixture_id SERIAL PRIMARY KEY,
+    team1_id SERIAL REFERENCES teams(id),
+    team2_id SERIAL REFERENCES teams(id),
+    score1 INT,
+    score2 INT
 );
