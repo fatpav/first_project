@@ -41,3 +41,13 @@ def create_team_list(self, team_list):
     team = Team(team_name)
     team_list.append(team)
     return team_list
+
+def delete(team_id):
+    sql = "DELETE FROM teams WHERE team_id = %s"
+    values = [team_id]
+    run_sql(sql, values)
+
+def update(team):
+    sql = "UPDATE teams SET team_name = %s WHERE team_id = %s"
+    values = [team.team_name, team.team_id]
+    run_sql(sql, values)

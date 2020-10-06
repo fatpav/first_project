@@ -31,16 +31,22 @@ def teams():
     teams = team_repository.select_all()
     return render_template("teams/index.html", teams=teams)
     
+@team_blueprint.route('/teams/<team_id>/delete', methods=['POST'])
+def delete_team(team_id):
+    team_repository.delete(team_id)
+    return redirect('/teams')
+
+@team_blueprint.route('/teams/<team_id>', methods=['POST'])
+def update_team(team_id):
+    name = request.form["name"]
+    team = Team(name, team_id)
+    team_repository.update(team)
+    return redirect('/teams')
+
+@team_blueprint.route("/teams/<team_id>/edit", methods=['POST'])
+def edit_team(team_id):
+    team = team_repository.select(team_id)
+    return render_template('teams/edit.html', team=team)
 
 
-# @team_blueprint.route('/teams')
-# def new_team_list():
-#     teams = team_repository.select_all()
-#     return render_template("teams/index.html", teams=teams)
-    
 
-
-# @team_blueprint.route('/teams/index')
-# def list_teams():
-#     teams = team_repository.select_all()
-#     return render_template("teams/index.html", teams=teams)

@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, blueprnt
+from flask import Flask, render_template, request, redirect, Blueprint
 
+from models.fixture import Fixture
 
 import repositories.user_repository as user_repository
 import repositories.team_repository as team_repository

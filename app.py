@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 app.register_blueprint(user_blueprint)
 app.register_blueprint(team_blueprint)
-app.register_blueprint(fixtures_blueprint)
+# app.register_blueprint(fixtures_blueprint)
 
 @app.route('/')
 def home():
