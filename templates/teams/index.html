@@ -8,17 +8,14 @@
 
 <section>
     <p>{{ team.team_name }}</p>
-    <a href="/teams/index/{{ team.team_id }}/delete"></a>
-    <form action="/teams/index/{{ team.team_id }}/delete" method='POST'>
+    <a href="/teams/{{ team.team_id }}/delete"></a>
+    <form action="/teams/{{ team.team_id }}/delete" method='POST'>
         <input type = "submit" value = "Delete">
     </form>
-    <form action="/teams/index/{{team.team_id}}/edit" method='POST'>
+    <form action="/teams/{{team.team_id}}/edit" method='POST'>
         <input type="submit" value ="Edit">
     </form>
 </section>
 
-<a href="/">Go home, ya bum</a>
-
 {% endfor %}
-
 {% endblock %}

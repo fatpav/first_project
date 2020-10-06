@@ -6,9 +6,6 @@ import repositories.user_repository as user_repository
 
 user_blueprint = Blueprint("users", __name__)
 
-# @user_blueprint.route('/users')
-# def new_user():
-#     return render_template("users/current_users.html")
 
 @user_blueprint.route('/users')
 def users():

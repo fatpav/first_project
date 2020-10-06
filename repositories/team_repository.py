@@ -17,10 +17,10 @@ def select_all():
     sql =  "SELECT * FROM teams"
     results = run_sql(sql)
 
-    for row in results:
-        team = Team(row['team_name'], row['team_id'])
+    for result in results:
+        team = Team(result['team_name'], result['team_id'])
         teams.append(team)
-        return teams
+    return teams
 
 def delete_all():
     sql = "DELETE FROM teams"
