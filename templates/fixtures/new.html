@@ -5,20 +5,20 @@
 
 <form action="/fixtures" method="POST">
     <div>
-        <label for="team">Team 1:</label>
+        <label for="team1">Team 1:</label>
         <select name="team1_id" id="team1">
-            {% for team1 in teams %}
-            <option value="{{ team.id }}">
+            {% for team1 in team1 %}
+            <option value="{{ team1.id }}">
                 {{ team1.name }}
             </option>
             {% endfor %}
         </select>
     </div>
     <div>
-        <label for="team">Team 2:</label>
+        <label for="team2">Team 2:</label>
         <select name="team2_id" id="team2">
-            {% for team2 in teams %}
-            <option value="{{ team.id }}">
+            {% for team2 in team2 %}
+            <option value="{{ team2.id }}">
                 {{ team2.name }}
             </option>
             {% endfor %}
@@ -28,5 +28,6 @@
         <input type="submit">
     </div>
 </form>
+
 
 {% endblock %}
