@@ -2,6 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request, url_for
 
 from models.team import Team
 import repositories.team_repository as team_repository
+import repositories.fixture_repository as fixture_repository
 
 team_blueprint = Blueprint("teams", __name__)
 
@@ -43,5 +44,6 @@ def edit_team(id):
 def show_fixtures(id):
     team = team_repository.select(id)
     fixtures = fixture_repository.show_team_fixtures(id)
-    return render_template('teams/show.html', team=team, fixtures=fixtures)
+    # import pdb; pdb.set_trace()
+    return render_template('/teams/show.html', team=team, fixtures=fixtures)
 

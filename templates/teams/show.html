@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
-{% content block %}
+{% block content %}
 
 <h2>{{ team.name }}</h2>
-<p>Type: {{ team.name }}</p>
 
 <h3>Fixtures</h3>
 <ul>
     {% for fixture in fixtures %}
-    <li>{{ fixture.id }}</li>
+    <li>{{ fixture.team1.name }} vs. {{ fixture.team2.name }} 
+        Result - {{ fixture.team1_score}} - {{fixture.team2_score}}
+    </li>
     {% endfor %}
 </ul>
 

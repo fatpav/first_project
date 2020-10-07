@@ -7,9 +7,9 @@
     <div>
         <label for="team1">Team 1:</label>
         <select name="team1_id" id="team1">
-            {% for team1 in fixture %}
-            <option value="{{ team1.id }}">
-                {{ team1.name }}
+            {% for team in team1 %}
+            <option value="{{ team.id }}">
+                {{ team.name }}
             </option>
             {% endfor %}
         </select>
@@ -17,9 +17,9 @@
     <div>
         <label for="team2">Team 2:</label>
         <select name="team2_id" id="team2">
-            {% for team2 in fixture %}
-            <option value="{{ team2.id }}">
-                {{ team2.name }}
+            {% for team in team2 %}
+            <option value="{{ team.id }}">
+                {{ team.name }}
             </option>
             {% endfor %}
         </select>

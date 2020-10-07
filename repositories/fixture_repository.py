@@ -47,11 +47,22 @@ def update(fixture):
     run_sql(sql, values)
 
 def show_team_fixtures(id):
-    sql "SELECT * FROM fixtures WHERE team1_id = %s OR team2_id = %s"
-    values = [id]
+    sql = "SELECT * FROM fixtures WHERE team1_id = %s OR team2_id = %s"
+    fixtures=[]
+    values = [id, id]
     results = run_sql(sql, values)
-    for fixture in fixtures:
-        fixture = Fixture(result["id"])
-    return fixtures
-
     
+    for result in results:
+
+# get instance of Team class for the team that matches team1_id
+# get instance of team class for the team matching team2_id
+# create fixture object that has team1, team2, score1 and score2
+# then append to fixtures
+
+        team1 = team_repository.select(result["team1_id"])
+        team2 = team_repository.select(result["team2_id"])
+        
+        fixture = Fixture(team1, team2, result["team1_score"], result["team2_score"])
+        # import pdb; pdb.set_trace()
+        fixtures.append(fixture)
+    return fixtures

@@ -22,7 +22,7 @@
     </div>
     <div>
         <label for="team2">Team 2:</label>
-        <select name="team2_id" id="team1">
+        <select name="team2_id" id="team2">
             {% for team in teams %}
             {% if team.id == fixture.team2.id %}
                 <option value="{{ team.id }}" selected>{{team.name}}</option>
