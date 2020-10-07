@@ -33,7 +33,7 @@
                 {% endif %}
             {% endfor %}
         </select>
-        <input type="number" name="team2_score" value="{{fixture.team2_score}}"/>
+        <input type="number" min=0 name="team2_score" value="{{fixture.team2_score}}"/>
     </div>
     <div>
         <input type="submit">
