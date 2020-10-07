@@ -39,5 +39,9 @@ def edit_team(id):
     team = team_repository.select(id)
     return render_template('teams/edit.html', team=team)
 
-
+@team_blueprint.route("/teams/<id>")
+def show_fixtures(id):
+    team = team_repository.select(id)
+    fixtures = fixture_repository.show_team_fixtures(id)
+    return render_template('teams/show.html', team=team, fixtures=fixtures)
 

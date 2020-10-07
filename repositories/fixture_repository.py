@@ -46,5 +46,12 @@ def update(fixture):
     values = [fixture.team1.id, fixture.team2.id, fixture.team1_score, fixture.team2_score, fixture.id]
     run_sql(sql, values)
 
+def show_team_fixtures(id):
+    sql "SELECT * FROM fixtures WHERE team1_id = %s OR team2_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for fixture in fixtures:
+        fixture = Fixture(result["id"])
+    return fixtures
 
-
+    

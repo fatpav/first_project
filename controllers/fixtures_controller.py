@@ -37,8 +37,15 @@ def delete_fixture(id):
 
 @fixtures_blueprint.route("/fixtures/<id>", methods = ['POST'])
 def update_fixture(id):
-    team1 = request.form["team1_id"]
-    team2 = request.form["team2_id"]
+    team1_id = request.form["team1_id"]
+    team2_id = request.form["team2_id"]
+
+    team1 = team_repository.select(team1_id)
+    team2 = team_repository.select(team2_id)
+
+    team1_score = request.form["team1_score"]
+    team2_score = request.form["team2_score"]
+    
     fixture = Fixture(team1, team2, team1_score, team2_score, id)
     fixture_repository.update(fixture)
     return redirect("/fixtures")
@@ -46,5 +53,8 @@ def update_fixture(id):
 @fixtures_blueprint.route("/fixtures/<id>/edit", methods = ['POST'])
 def edit_fixture(id):
     fixture = fixture_repository.select(id)
-    return render_template("/fixtures/edit.html", fixture=fixture)
+    teams = team_repository.select_all()
+    return render_template("/fixtures/edit.html", teams = teams, fixture=fixture)
+
+
 

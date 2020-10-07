@@ -8,22 +8,32 @@
     <div>
         <label for="team1">Team 1:</label>
         <select name="team1_id" id="team1">
-            {% for team1 in team1 %}
-            <option value="{{ team1.id }}">
-                {{ team1.name }}
-            </option>
+            {% for team in teams %}
+            {% if team.id == fixture.team1.id %}
+                <option value="{{ team.id }}" selected>{{team.name}}</option>
+                {% else %}
+                <option value="{{ team.id }}">
+                    {{ team.name }}
+                </option>
+                {% endif %}
             {% endfor %}
         </select>
+        <input type="number" name="team1_score" value="{{fixture.team1_score}}"/>
     </div>
     <div>
         <label for="team2">Team 2:</label>
-        <select name="team2_id" id="team2">
-            {% for team2 in team2 %}
-            <option value="{{ team2.id }}">
-                {{ team2.name }}
-            </option>
+        <select name="team2_id" id="team1">
+            {% for team in teams %}
+            {% if team.id == fixture.team2.id %}
+                <option value="{{ team.id }}" selected>{{team.name}}</option>
+                {% else %}
+                <option value="{{ team.id }}">
+                    {{ team.name }}
+                </option>
+                {% endif %}
             {% endfor %}
         </select>
+        <input type="number" name="team2_score" value="{{fixture.team2_score}}"/>
     </div>
     <div>
         <input type="submit">
