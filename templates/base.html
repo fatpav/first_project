@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Fixture Fixer</title>
+    <title>FixtureFixer</title>
 </head>
 <body>
-    <h1> Fixture Fixer </h1>
-    <h2>Fix your fixtures for no reason at all</h2>
     <main>
+        <h1> FixtureFixer </h1>
+        <h2>Fix your fixtures faster!</h2>  
+    
         <nav>
             <ul>
                 <li>
@@ -23,13 +24,15 @@
                 </li>
             </ul>
         </nav>
+    </main>
+ 
     <section>
 
         {% block content %}
 
         {% endblock %}
     </section>
-    </main>
+ 
     <footer>
         <h4>&#169 PavCo 2020</h4>
         <ul>
@@ -41,5 +44,5 @@
             </li>
         </ul>
     </footer>
-</body>
+</body> 
 </html>

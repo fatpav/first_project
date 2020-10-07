@@ -3,4 +3,38 @@ body {
     background-color: gold;
 }
 
+body > main {
+    background-color: olivedrab;
+}
+
+body > main > h1 {
+    text-align: center;
+}
+
+body > main > h2 {
+    text-align: center;
+}
+
+body > main > nav > ul {
+    list-style: none;
+    text-align: left;
+}
+
+
+
+footer {
+    background-color: olivedrab;
+    color: black;
+}
+
+footer > h4 {
+    text-align: center;
+}
+
+footer > ul {
+    list-style: none;
+    text-align: right;
+}
+
+
   
