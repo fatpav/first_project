@@ -1,17 +1,13 @@
--- DROP TABLE IF EXISTS matches;
 DROP TABLE IF EXISTS fixtures;
 DROP TABLE IF EXISTS teams;
--- DROP TABLE IF EXISTS hometeam;
 
 
 
 
 CREATE TABLE teams (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    wins INT,
-    losses INT,
-    draws INT
+    name VARCHAR(255)
+
 );
 
 
@@ -24,8 +20,3 @@ CREATE TABLE fixtures (
     team2_score INT
 );
  
---  CREATE TABLE matches (
---      match_id SERIAL PRIMARY KEY,
---      winner INT,
---      loser INT
--- );
