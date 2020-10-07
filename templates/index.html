@@ -2,11 +2,22 @@
 
 {% block content %}
 
-<h3>Welcome to FixtureFixer</h3>
+<h2>Welcome to FixtureFixer</h2>
 
-<a href="/teams/new">Get Started</a>
+<form action="/teams/new">
+<button type = "submit">Add teams</button>
+</form>
+
+<h2>Check and edit teams</h2>
 
 <form action="/teams">
 <button type = "submit">Current Teams</button>
 </form>
+
+<h2>See current fixtures</h2>
+
+<form action="/fixtures">
+<button type = "submit">Current Fixtures</button>
+</form>
+
 {% endblock %}

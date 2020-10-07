@@ -17,10 +17,26 @@
     </form>
 </section>
 
+{% endfor %}
+
+<h2>Add more teams</h2>
+
+<section>
+    <form action="/teams" method="POST">
+        <div>
+            <label for="name"> Add another team:</label>
+            <input type="text" id="name" name="name">
+            <input type="submit">
+        </div>
+    </form>
+</section>
+
+<h2>create new fixtures</h2>
+
 <div>
     <form action="/fixtures/new">
     <input type="submit" value = "Create Fixture">
     </form>
-</div> -->
-{% endfor %}
+</div>
+
 {% endblock %}

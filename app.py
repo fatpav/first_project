@@ -13,7 +13,7 @@ app.register_blueprint(fixtures_blueprint)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('/index.html')
 
 
 
